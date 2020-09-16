@@ -26,7 +26,7 @@ task :update_feed => :environment do
   push ="#{word}最新の野球ニュースが届いてるで~\n#{title}\n#{link}"
   user_ids = User.all.pluck(:line_id)
   message = {
-    type: 'text'
+    type: 'text',
     text: push
   }
   response = client.multicast(user_ids, message)
