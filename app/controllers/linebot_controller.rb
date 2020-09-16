@@ -29,7 +29,7 @@ class LinebotController < ApplicationController
           else
             word = "何を言うてんねん、ワイのできることは最新のニュースを届けるだけや"
           end
-          push = "#{word}\n#{title}\n#{url}"
+          push = "#{word}\n#{title}\n#{link}"
         else
           push = "テキストで頼むで"
         end
