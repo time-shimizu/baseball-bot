@@ -23,7 +23,7 @@ class LinebotController < ApplicationController
           xml = open(url).read.toutf8
           doc = REXML::Document.new(xml)
           title = doc.elements["rss/channel/item[1]/title"].text
-          link = doc.elements["rss/channel/item[1]/link"].text
+          link = doc.elements["rss/channel/item[1]/guid"].text
           if input.match(/.*(f最新|野球|ニュース).*/)
             word = "最新のニュースはこれやで"
           else

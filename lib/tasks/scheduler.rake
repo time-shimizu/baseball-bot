@@ -17,7 +17,7 @@ task :update_feed => :environment do
   doc = REXML::Document.new(xml)
 
   title = doc.elements["rss/channel/item[1]/title"].text
-  link = doc.elements["rss/channel/item[1]/link"].text
+  link = doc.elements["rss/channel/item[1]/guid"].text
 
   if Date.today.strftime("%A") == "Monday"
     word = "月曜は野球ないから寂しいなあ,"
